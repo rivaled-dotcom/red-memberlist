@@ -1,0 +1,6 @@
+---
+name: MemberList
+description: Output all Discord server member IDs or full member info
+version: 1.0.0
+author: rivaled-dotcom
+---
