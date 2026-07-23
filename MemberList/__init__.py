@@ -1,13 +1,15 @@
-import redbot
+from redbot.core import Cog
+from redbot.core import commands
 
 
-class MemberList(redbot.Cog):
+class MemberList(Cog):
     """Outputs all member IDs for the server."""
 
     def __init__(self, bot):
         super().__init__(bot)
+        self.bot = bot
 
-    @redbot.commands.command()
+    @commands.command()
     async def memberids(self, ctx):
         """List all member IDs in the server."""
         guild = ctx.guild
@@ -25,7 +27,7 @@ class MemberList(redbot.Cog):
             text += "\n".join(f"`{idx}`" for idx in chunk)
             await ctx.send(text)
 
-    @redbot.commands.command()
+    @commands.command()
     async def memberinfo(self, ctx):
         """List all members with IDs and usernames."""
         guild = ctx.guild
